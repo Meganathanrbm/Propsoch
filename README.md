@@ -33,22 +33,27 @@ An improved version of the [PropSoch](https://www.propsoch.com/) landing page, b
 
 #### 1. Hero search experience (interaction friction)
 **Issue:** The original Hero required extra interaction before a user could start searching for a property — the most important action on the page had unnecessary friction.
+
 **Fix:** Brought the primary search filters (Location, Property Type, Budget) directly into the Hero, and added credibility indicators near the fold to build trust immediately.
 
 #### 2. CTA inconsistency & contrast
 **Issue:** CTA styling was inconsistent — the final banner CTA used a white button while the rest of the page used the brand orange, weakening visual hierarchy. Some CTA color pairs also had weak contrast.
+
 **Fix:** Standardized primary CTA styling site-wide, matched the banner CTA to the primary system, and reviewed all CTA color pairs against **WCAG 2.2 AA** contrast requirements. Added pointer-cursor feedback on interactive elements.
 
 #### 3. Property comparison (drag) interaction
 **Issue:** In the "Brokers show you the brochure. We show the reality." section, the before/after drag slider moved too aggressively and was hard to control precisely, especially on touch.
+
 **Fix:** Reworked the drag handler with controlled movement and clear boundaries, making the interaction predictable on both mouse and touch.
 
 #### 4. Sticky scroll behavior
 **Issue:** In the "Buying a property should not take you forever" section, the sticky left panel didn't track the right-side content correctly and could trap page scroll.
+
 **Fix:** Reworked the scroll logic so the left panel stays sticky only while its related content is in view, then releases normal page scroll once the section completes.
 
 #### 5. Image delivery & mobile performance
 **Issue:** The original site served large PNG images with no modern-format fallback, increasing payload size and hurting mobile load time (reflected in the 61 Performance score).
+
 **Fix:** Enabled Next.js image optimization with AVIF/WebP output and responsive `next/image` sizing, and added `preconnect` for key external resources to shorten connection setup time.
 
 ---
