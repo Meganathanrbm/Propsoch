@@ -101,8 +101,8 @@ The redesign prioritized reducing friction at the point of highest intent (searc
 ## Getting Started
 
 ```bash
-git clone <your-github-repository-url>
-cd <project-directory>
+git clone https://github.com/Meganathanrbm/Propsoch.git
+cd Propsoch
 npm install
 ```
 
