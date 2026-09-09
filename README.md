@@ -1,4 +1,4 @@
-# PropSoch Landing Page — Redesign & Performance Improvement
+# PropSoch Landing Page - Redesign & Performance Improvement
 
 An improved version of the [PropSoch](https://www.propsoch.com/) landing page, built as a frontend assignment. The goal was to improve **UX, visual consistency, accessibility, SEO, responsiveness, and performance** while keeping the original page's core purpose and content.
 
@@ -8,7 +8,7 @@ An improved version of the [PropSoch](https://www.propsoch.com/) landing page, b
 
 ---
 
-## Part 1 — Analysis
+## Part 1 - Analysis
 
 ### 1.1 Lighthouse Scores
 
@@ -32,12 +32,12 @@ An improved version of the [PropSoch](https://www.propsoch.com/) landing page, b
 ### 1.2 UX/UI Issues & Fixes
 
 #### 1. Hero search experience (interaction friction)
-**Issue:** The original Hero required extra interaction before a user could start searching for a property — the most important action on the page had unnecessary friction.
+**Issue:** The original Hero required extra interaction before a user could start searching for a property, the most important action on the page had unnecessary friction.
 
 **Fix:** Brought the primary search filters (Location, Property Type, Budget) directly into the Hero, and added credibility indicators near the fold to build trust immediately.
 
 #### 2. CTA inconsistency & contrast
-**Issue:** CTA styling was inconsistent — the final banner CTA used a white button while the rest of the page used the brand orange, weakening visual hierarchy. Some CTA color pairs also had weak contrast.
+**Issue:** CTA styling was inconsistent - the final banner CTA used a white button while the rest of the page used the brand orange, weakening visual hierarchy. Some CTA color pairs also had weak contrast.
 
 **Fix:** Standardized primary CTA styling site-wide, matched the banner CTA to the primary system, and reviewed all CTA color pairs against **WCAG 2.2 AA** contrast requirements. Added pointer-cursor feedback on interactive elements.
 
@@ -58,12 +58,12 @@ An improved version of the [PropSoch](https://www.propsoch.com/) landing page, b
 
 ---
 
-## Part 2 — Build
+## Part 2 - Build
 
 ### Sections implemented
-- **Hero** — fully redesigned with integrated search filters and trust badges (`components/sections/hero/`)
-- **Stats** — redesigned for clearer scanning of key numbers (`components/sections/stats/`)
-- **Comparison** — reworked drag-to-compare interaction (`components/sections/comparison/`)
+- **Hero** - fully redesigned with integrated search filters and trust badges (`components/sections/hero/`)
+- **Stats** - redesigned for clearer scanning of key numbers (`components/sections/stats/`)
+- **Comparison** - reworked drag-to-compare interaction (`components/sections/comparison/`)
 - Additional sections carried over and refined: Process/timeline, Trusted-by marquee, Master plan, FAQ (with structured data)
 
 ### Responsive design
@@ -81,7 +81,7 @@ An improved version of the [PropSoch](https://www.propsoch.com/) landing page, b
 
 ---
 
-## Part 3 — What Changed & Why
+## Part 3 - What Changed & Why
 
 | Area          | Improvement                              |
 | ------------- | ----------------------------------------- |
@@ -94,7 +94,7 @@ An improved version of the [PropSoch](https://www.propsoch.com/) landing page, b
 | Accessibility | ARIA labels, alt text, contrast fixes (80 → 97) |
 | SEO           | FAQ structured data, image alt text (83 → 100) |
 
-The redesign prioritized reducing friction at the point of highest intent (search), fixing broken/uncomfortable interactions (drag comparison, sticky scroll), and closing the performance and accessibility gaps that Lighthouse flagged in the original — rather than a purely visual reskin.
+The redesign prioritized reducing friction at the point of highest intent (search), fixing broken/uncomfortable interactions (drag comparison, sticky scroll), and closing the performance and accessibility gaps that Lighthouse flagged in the original - rather than a purely visual reskin.
 
 ---
 
