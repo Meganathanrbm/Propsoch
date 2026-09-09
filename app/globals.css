@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+/* -------- Design tokens -------- */
+@theme {
+  --color-orange-10: #fff4ef;
+  --color-orange-20: #ffddd0;
+  --color-orange-30: #ffc7b1;
+  --color-orange-40: #ffb091;
+  --color-orange-50: #ff9a72;
+  --color-orange-60: #ff8352;
+  --color-orange-70: #ff6d33;
+  --color-orange-80: #ff4b04;
+  --color-orange-90: #d43c00;
+  --color-orange-100: #a52f00;
+
+  --color-purple-10: #f7f1ff;
+  --color-purple-20: #e8d5fe;
+  --color-purple-30: #d8b9fd;
+  --color-purple-40: #c99efd;
+  --color-purple-50: #b982fc;
+  --color-purple-60: #aa66fc;
+  --color-purple-70: #9a4afb;
+  --color-purple-80: #7f19fa;
+  --color-purple-90: #6605dc;
+  --color-purple-100: #4f04ab;
+
+  --color-coolgrey-0: #fff;
+  --color-coolgrey-10: #f2f3f7;
+  --color-coolgrey-20: #e6e8f0;
+  --color-coolgrey-30: #d5d8e3;
+  --color-coolgrey-40: #bec2d1;
+  --color-coolgrey-50: #a6acbd;
+  --color-coolgrey-60: #85869d;
+  --color-coolgrey-70: #66677e;
+  --color-coolgrey-80: #484960;
+  --color-coolgrey-90: #333447;
+  --color-coolgrey-100: #212130;
+
+  --color-grey-10: #e3e3e3;
+  --color-grey-20: #c7c7c7;
+  --color-grey-30: #ababab;
+  --color-grey-40: #8f8f8f;
+  --color-grey-50: #737373;
+  --color-grey-60: #575757;
+  --color-grey-70: #3b3b3b;
+  --color-grey-80: #1f1f1f;
+  --color-grey-90: #1b1b1b;
+  --color-grey-100: #171717;
+
+  --color-red-70: #f64c4c;
+  --color-green-70: #47b881;
+  --color-yellow-70: #ffad0d;
+  --color-blue-70: #3b82f6;
+
+  --color-primary: #ff6d33;
+  --color-primary-strong: #d43c00;
+  --color-primary-ink: #a52f00;
+  --color-primary-foreground: #fff;
+  --color-primarylight: #fff5f0;
+
+  --color-background: #fff;
+  --color-foreground: #0a0a0a;
+  --color-lightborder: #e6e8f0;
+  --color-accent-foreground: #212130;
+  --color-surface-soft: #fbfbfa;
+  --color-surface-dark: #1e1f1e;
+  --color-muted: #66677e;
+  --color-muted-icon: #66677e;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --breakpoint-xl: 80rem;
+  --radius-xs: 0.125rem;
+  --radius-xl: 0.75rem;
+  --radius: 0.3rem;
+
+  --section-gap: 3.5rem;
+  --section-gap-lg: 5.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-strong);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+    }
+
+    .animate-marquee-left,
+    .animate-marquee-right {
+      animation: none !important;
+      transform: none !important;
+    }
+
+    .hero-rotating-word [data-word] {
+      animation: none !important;
+    }
+    .hero-rotating-word [data-word="0"] {
+      opacity: 1 !important;
+    }
+  }
+}
+
+
+
+@utility hide-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility hero-rotating-word {
+  position: relative;
+  display: inline-block;
+
+  [data-word] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    white-space: nowrap;
+    animation: hero-word-cycle 6s infinite;
+  }
+  [data-word="0"] {
+    animation-delay: 0s;
+  }
+  [data-word="1"] {
+    animation-delay: 2s;
+  }
+  [data-word="2"] {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes hero-word-cycle {
+  0%,
+  4% {
+    opacity: 0;
+  }
+  6%,
+  28% {
+    opacity: 1;
+  }
+  33%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@utility animate-marquee-left {
+  animation: marquee-left 28s linear infinite;
+}
+@utility animate-marquee-right {
+  animation: marquee-right 32s linear infinite;
+}
+
+@utility marquee-paused {
+  animation-play-state: paused;
+}
+
+@utility timeline-fill {
+  height: calc(var(--timeline-progress, 0) * 1%);
+}
+
+@utility edge-fade-right {
+  mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent 100%);
+}
